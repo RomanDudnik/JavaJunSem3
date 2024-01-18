@@ -8,6 +8,11 @@ import java.util.Scanner;
 import static org.example.task2.ToDoListApp.*;
 
 public class Program {
+
+    /**
+     * Программа для управления задачами (ToDoList)
+     * @param args
+     */
     public static void main(String[] args) {
         List<ToDoV2> tasks;
         File f = new File(FILE_JSON);
@@ -15,7 +20,7 @@ public class Program {
             tasks = ToDoListApp.loadTasksFromFile(FILE_JSON);
         }
         else {
-            tasks = prepareTasks();
+            tasks = prepareTasks(); //если файл не существует, создадим его и загрузим задачи из него
             ToDoListApp.saveTasksToFile(FILE_JSON, tasks);
             ToDoListApp.saveTasksToFile(FILE_BIN, tasks);
             ToDoListApp.saveTasksToFile(FILE_XML, tasks);

@@ -9,13 +9,19 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+/**
+ * Класс ToDoListApp
+ * Вспомогательный класс для работы с задачами
+ * Описание всех основных функций приложения
+ */
 public class ToDoListApp {
 
     public static final String FILE_JSON = "tasks.json";
     public static final String FILE_BIN = "tasks.bin";
     public static final String FILE_XML = "tasks.xml";
-    private static final ObjectMapper objectMapper = new ObjectMapper();
-    private static final XmlMapper xmlMapper = new XmlMapper();
+    private static final ObjectMapper objectMapper = new ObjectMapper();  //для работы с JSON (пакет Jackson)
+    private static final XmlMapper xmlMapper = new XmlMapper();  //для работы с XML (пакет Jackson)
+
 
     public static void addNewTask(Scanner scanner, List<ToDoV2> tasks) {
         System.out.println("Введите название новой задачи:");

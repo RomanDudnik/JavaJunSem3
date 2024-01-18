@@ -5,7 +5,11 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.io.Serializable;
 
 public class UserData implements Serializable {
+    private String name;
+    private int age;
 
+    @JsonIgnore
+    transient String password;
 
     public UserData(String name, int age, String password) {
         this.name = name;
@@ -13,11 +17,7 @@ public class UserData implements Serializable {
         this.password = password;
     }
 
-    private String name;
-    private int age;
 
-    @JsonIgnore
-    transient String password;
 
 
     public String getName() {

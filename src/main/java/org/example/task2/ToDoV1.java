@@ -2,6 +2,12 @@ package org.example.task2;
 
 import java.io.Serializable;
 
+/**
+ * Сущность задачи ToDoList:
+ * Описание главной сущности приложения ToDoList
+ * работа с интерфейсом Serializable
+ */
+
 public class ToDoV1 implements Serializable {
 
     /**

@@ -5,6 +5,12 @@ import java.io.IOException;
 import java.io.ObjectInput;
 import java.io.ObjectOutput;
 
+/**
+ * Сущность задачи ToDoList:
+ * Описание главной сущности приложения ToDoList
+ * работа с интерфейсом Externalizable:
+ * для построения логики(в ручном режиме) сериализации и десериализации
+ */
 public class ToDoV2 implements Externalizable {
 
     /**
@@ -25,14 +31,21 @@ public class ToDoV2 implements Externalizable {
         isDone = false;
     }
 
+    /** Переделяем методы для наших задач
+     * используем необходимые методы интерфейса Externalizable
+     * @param out the stream to write the object to
+     * @throws IOException
+     */
     @Override
     public void writeExternal(ObjectOutput out) throws IOException {
+        // соблюдаем последовательность записи
         out.writeObject(title);
         out.writeBoolean(isDone);
     }
 
     @Override
     public void readExternal(ObjectInput in) throws IOException, ClassNotFoundException {
+        // соблюдаем последовательность записи
         title = (String)in.readObject();
         isDone = in.readBoolean();
     }
