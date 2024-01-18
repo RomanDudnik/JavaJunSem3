@@ -16,7 +16,6 @@ public class UserData implements Serializable {
     private String name;
     private int age;
 
-
     @JsonIgnore
     transient String password;
 

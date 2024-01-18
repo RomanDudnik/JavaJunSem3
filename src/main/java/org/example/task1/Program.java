@@ -38,6 +38,7 @@ public class Program {
             e.printStackTrace();
         }
 
+        // Задача 2
         try (FileInputStream fileIn = new FileInputStream("userdata.bin");
              ObjectInputStream in = new ObjectInputStream(fileIn)){
             user = (UserData)in.readObject();
