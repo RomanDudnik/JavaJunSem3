@@ -23,6 +23,7 @@ public class ToDoV2 implements Externalizable {
      */
     private boolean isDone;
 
+    // конструктор по умолчанию (должен быть!)
     public ToDoV2() {
     }
 
