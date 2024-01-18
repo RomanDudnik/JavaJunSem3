@@ -20,7 +20,7 @@ public class Main {
 
         Student student = new Student("Ivan", 18, 4.5);
         System.out.println("Before serialization: ");
-        student.PrintFields();
+        student.printFields();
 
         try {
             // Поток для записи объекта в файл
@@ -47,13 +47,14 @@ public class Main {
             fileIn.close();
 
             System.out.println("After deserialization: ");
-            deserializedStudent.PrintFields();
+            deserializedStudent.printFields();
             if (deserializedStudent.getGpa() == 0.0)
-                System.out.println("GPA не было сохранено в файл. \n Это произошло потому " +
-                    "что поле 'gpa' было объявлено как transient, \n что означает, " +
-                    "что оно не участвует в процессе сериализации. " +
-                    "\n Поэтому при десериализации объекта это поле получает значение по умолчанию " +
-                    "для своего типа данных, в данном случае - 0.0.");
+                System.out.println("""
+                        ! GPA не было сохранено в файл.\s
+                        Это произошло потому что поле 'gpa' было объявлено как transient,\s
+                        что означает, что оно не участвует в процессе сериализации.\s
+                        Поэтому при десериализации объекта это поле получает значение по умолчанию \s 
+                        для своего типа данных, в данном случае - 0.0. !""");
 
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();

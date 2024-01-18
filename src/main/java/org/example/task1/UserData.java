@@ -8,7 +8,7 @@ public class UserData implements Serializable {
     private String name;
     private int age;
 
-    @JsonIgnore
+    @JsonIgnore                 // Анотация для игнорирования поля (для библиотеки jackson)
     transient String password;
 
     public UserData(String name, int age, String password) {
